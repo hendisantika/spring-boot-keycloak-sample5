@@ -2,6 +2,10 @@ package id.my.hendisantika.keycloaksample5.controller;
 
 import id.my.hendisantika.keycloaksample5.service.GroupService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,4 +24,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class GroupsController {
     private final GroupService groupService;
+
+    @PutMapping("/{groupId}/assign/users/{userId}")
+    public ResponseEntity<?> assignGroup(@PathVariable String userId, @PathVariable String groupId) {
+        groupService.assignGroup(userId, groupId);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
 }
