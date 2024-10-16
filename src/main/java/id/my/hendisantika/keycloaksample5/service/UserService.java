@@ -5,6 +5,7 @@ import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
+import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
@@ -75,5 +76,14 @@ public class UserService {
         UsersResource usersResource = getUsersResource();
         usersResource.delete(userId);
         log.info("User has been deleted");
+    }
+
+    public void forgotPassword(String username) {
+        UsersResource usersResource = getUsersResource();
+        List<UserRepresentation> userRepresentations = usersResource.searchByUsername(username, true);
+        UserRepresentation userRepresentation1 = userRepresentations.get(0);
+        UserResource userResource = usersResource.get(userRepresentation1.getId());
+        userResource.executeActionsEmail(List.of("UPDATE_PASSWORD"));
+        log.info("Forgot password has been sent {}", username);
     }
 }
