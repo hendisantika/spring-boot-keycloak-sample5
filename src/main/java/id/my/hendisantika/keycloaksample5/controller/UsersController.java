@@ -60,4 +60,9 @@ public class UsersController {
         return ResponseEntity.status(HttpStatus.OK).body(userService.getUserRoles(id));
     }
 
+    @GetMapping("/{id}/groups")
+    public ResponseEntity<?> getUserGroups(@PathVariable String id) {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.getUserGroups(id));
+    }
+
 }
