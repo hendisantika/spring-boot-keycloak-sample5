@@ -1,7 +1,12 @@
 package id.my.hendisantika.keycloaksample5.controller;
 
+import id.my.hendisantika.keycloaksample5.model.NewUserRecord;
 import id.my.hendisantika.keycloaksample5.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,4 +25,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class UsersController {
     private final UserService userService;
+
+    @PostMapping
+    public ResponseEntity<?> createUser(@RequestBody NewUserRecord newUserRecord) {
+        userService.createUser(newUserRecord);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 }
