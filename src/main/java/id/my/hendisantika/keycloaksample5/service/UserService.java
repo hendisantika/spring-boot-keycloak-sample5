@@ -59,7 +59,7 @@ public class UserService {
 
         Response response = usersResource.create(userRepresentation);
 
-        log.info("Status Code " + response.getStatus());
+        log.info("Status Code {}", response.getStatus());
 
         if (!Objects.equals(201, response.getStatus())) {
 

@@ -14,6 +14,6 @@ app:
   keycloak:
     admin:
       clientId: admin-cli
-      clientSecret: pHJbF76NVZA3gyynb0a5PzHIgZaF3bdJ
+      clientSecret: EX8RNxUN8Q5TA1T0Mys9An3VJ0QafCNB
     realm: PowerRanger
     serverUrl: http://localhost:7080

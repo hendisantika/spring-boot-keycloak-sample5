@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/rbac")
 @RequiredArgsConstructor
 public class RBACController {
-    @GetMapping("merge-role")
+    @GetMapping("/merge-role")
     @PreAuthorize("hasAnyRole('MERGE')")
     public ResponseEntity<?> testForMergeRole() {
         log.info("SOMETHING ");
