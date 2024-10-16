@@ -58,10 +58,16 @@ public class UserService {
             throw new RuntimeException("Status code " + response.getStatus());
         }
 
-        log.info("New user has bee created");
+        log.info("New user has been created");
 
         List<UserRepresentation> userRepresentations = usersResource.searchByUsername(newUserRecord.username(), true);
         UserRepresentation userRepresentation1 = userRepresentations.get(0);
         sendVerificationEmail(userRepresentation1.getId());
+    }
+
+    public void sendVerificationEmail(String userId) {
+        UsersResource usersResource = getUsersResource();
+        usersResource.get(userId).sendVerifyEmail();
+        log.info("Verification email has been sent {}", userId);
     }
 }
