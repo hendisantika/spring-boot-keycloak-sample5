@@ -4,6 +4,7 @@ import id.my.hendisantika.keycloaksample5.service.RoleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,12 @@ public class RolesController {
     @PutMapping("/assign/users/{userId}")
     public ResponseEntity<?> assignRole(@PathVariable String userId, @RequestParam String roleName) {
         roleService.assignRole(userId, roleName);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @DeleteMapping("/remove/users/{userId}")
+    public ResponseEntity<?> unAssignRole(@PathVariable String userId, @RequestParam String roleName) {
+        roleService.deleteRoleFromUser(userId, roleName);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
