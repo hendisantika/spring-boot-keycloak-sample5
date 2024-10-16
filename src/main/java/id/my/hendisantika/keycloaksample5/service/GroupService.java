@@ -33,4 +33,10 @@ public class GroupService {
         user.joinGroup(groupId);
         log.info("User joined group {}", groupId);
     }
+
+    public void deleteGroupFromUser(String userId, String groupId) {
+        UserResource user = userService.getUser(userId);
+        user.leaveGroup(groupId);
+        log.info("User left group {}", groupId);
+    }
 }
