@@ -8,6 +8,7 @@ import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
+import org.keycloak.representations.idm.GroupRepresentation;
 import org.keycloak.representations.idm.RoleRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Value;
@@ -97,6 +98,11 @@ public class UserService {
     public List<RoleRepresentation> getUserRoles(String userId) {
         log.info("Get user roles ...");
         return getUser(userId).roles().realmLevel().listAll();
+    }
+
+    public List<GroupRepresentation> getUserGroups(String userId) {
+        log.info("Get user groups ...");
+        return getUser(userId).groups();
     }
 
 }
