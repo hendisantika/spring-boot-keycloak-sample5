@@ -26,15 +26,22 @@ import java.util.Collections;
 @RequiredArgsConstructor
 public class RoleService {
     private final UserService userService;
+
     private final Keycloak keycloak;
+
     @Value("${app.keycloak.realm}")
     private String realm;
+
+    private RolesResource getRolesResource() {
+        return keycloak.realm(realm).roles();
+    }
 
     public void assignRole(String userId, String roleName) {
         UserResource user = userService.getUser(userId);
         RolesResource rolesResource = getRolesResource();
         RoleRepresentation representation = rolesResource.get(roleName).toRepresentation();
         user.roles().realmLevel().add(Collections.singletonList(representation));
+        log.info("Role assigned: {}", roleName);
     }
 
     public void deleteRoleFromUser(String userId, String roleName) {
@@ -42,5 +49,6 @@ public class RoleService {
         RolesResource rolesResource = getRolesResource();
         RoleRepresentation representation = rolesResource.get(roleName).toRepresentation();
         user.roles().realmLevel().remove(Collections.singletonList(representation));
+        log.info("Role deleted: {}", roleName);
     }
 }
