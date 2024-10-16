@@ -86,4 +86,10 @@ public class UserService {
         userResource.executeActionsEmail(List.of("UPDATE_PASSWORD"));
         log.info("Forgot password has been sent {}", username);
     }
+
+    public UserResource getUser(String userId) {
+        UsersResource usersResource = getUsersResource();
+        log.info("Get User ...");
+        return usersResource.get(userId);
+    }
 }
