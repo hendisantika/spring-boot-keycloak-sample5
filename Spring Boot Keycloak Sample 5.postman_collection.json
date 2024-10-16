@@ -1,0 +1,526 @@
+{
+  "info": {
+    "_postman_id": "8a98f002-85cb-41de-b221-de086c4df1f5",
+    "name": "Spring Boot Keycloak Sample 5",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "276892"
+  },
+  "item": [
+    {
+      "name": "USERS",
+      "item": [
+        {
+          "name": "Create New User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNjcxOTAsImlhdCI6MTcyOTA2Njg5MCwianRpIjoiNjBhYjJkNjItZjg1OC00MTQ0LTk1ODEtZjJkOTk3YWFiZjcxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiIyMmQ2YzcwMS0xNjRiLTQzZjktYmNlNi00ZWIxNzBkNzBjYWYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.HsHNElGEIXa-Wcq4jBj0YAxZN6bBggYE_oyGw-VkJMPjyDSiy-24E_qYAMbIG1IbcklxfEfwc_mNxt8oRy55acb5aqyd0AT26fk8xLuN-IliRCfAz3oBPK0X4_Fw6NONX9crS01XdZPJB_Ndp2utsL3l51oFBcuCdYXLAOwG6cMebFYy_NsJW3gxC_HtyuSx4FrcSBw-PhKbaHcguq4eq5RDZa8RFGfJuRtggSLchWoZ26z9JQK4TqN4MZQ1bVM5S8XlfHg1A4k9UUTiwAs4cwVKem6P_aKYxhaDi5xk-QoxxSfkMWCuFlrr6k8jVR5ofmQc72ytzKGgzPY0dB1PmA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\" : \"ITADORI\",\n    \"lastName\": \"YUJI\",\n    \"username\": \"yuji@mailnesia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Forgot Password",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNjcxOTAsImlhdCI6MTcyOTA2Njg5MCwianRpIjoiNjBhYjJkNjItZjg1OC00MTQ0LTk1ODEtZjJkOTk3YWFiZjcxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiIyMmQ2YzcwMS0xNjRiLTQzZjktYmNlNi00ZWIxNzBkNzBjYWYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.HsHNElGEIXa-Wcq4jBj0YAxZN6bBggYE_oyGw-VkJMPjyDSiy-24E_qYAMbIG1IbcklxfEfwc_mNxt8oRy55acb5aqyd0AT26fk8xLuN-IliRCfAz3oBPK0X4_Fw6NONX9crS01XdZPJB_Ndp2utsL3l51oFBcuCdYXLAOwG6cMebFYy_NsJW3gxC_HtyuSx4FrcSBw-PhKbaHcguq4eq5RDZa8RFGfJuRtggSLchWoZ26z9JQK4TqN4MZQ1bVM5S8XlfHg1A4k9UUTiwAs4cwVKem6P_aKYxhaDi5xk-QoxxSfkMWCuFlrr6k8jVR5ofmQc72ytzKGgzPY0dB1PmA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\" : \"ITADORI\",\n    \"lastName\": \"YUJI\",\n    \"username\": \"yuji@mailnesia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/users/forgot-password?username=1@mailnesia.com",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "users",
+                "forgot-password"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "1@mailnesia.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Send Verification Email",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNjcxOTAsImlhdCI6MTcyOTA2Njg5MCwianRpIjoiNjBhYjJkNjItZjg1OC00MTQ0LTk1ODEtZjJkOTk3YWFiZjcxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiIyMmQ2YzcwMS0xNjRiLTQzZjktYmNlNi00ZWIxNzBkNzBjYWYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.HsHNElGEIXa-Wcq4jBj0YAxZN6bBggYE_oyGw-VkJMPjyDSiy-24E_qYAMbIG1IbcklxfEfwc_mNxt8oRy55acb5aqyd0AT26fk8xLuN-IliRCfAz3oBPK0X4_Fw6NONX9crS01XdZPJB_Ndp2utsL3l51oFBcuCdYXLAOwG6cMebFYy_NsJW3gxC_HtyuSx4FrcSBw-PhKbaHcguq4eq5RDZa8RFGfJuRtggSLchWoZ26z9JQK4TqN4MZQ1bVM5S8XlfHg1A4k9UUTiwAs4cwVKem6P_aKYxhaDi5xk-QoxxSfkMWCuFlrr6k8jVR5ofmQc72ytzKGgzPY0dB1PmA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\" : \"ITADORI\",\n    \"lastName\": \"YUJI\",\n    \"username\": \"yuji@mailnesia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/users/5bafc0d0-7280-46eb-8c04-a28ebf7b8646/send-verification-email",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "users",
+                "5bafc0d0-7280-46eb-8c04-a28ebf7b8646",
+                "send-verification-email"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Roles",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNzAwNTcsImlhdCI6MTcyOTA2OTc1NywianRpIjoiY2IzMThlMDEtYWQ0NS00ZGJkLThmYjYtZWY5NGRkN2M4MDg1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiI0ZGU4MjhjNC0xZGFmLTRkNGMtOGY3YS1iNDc5NzcwMzBiMmIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.RZGN1YWzY9SWupA-oHdB3iWyvVdOAsvyhWj7zkCfSQT400yI7S3Sxkt_Klbx5urda3F2oThjSwUC4z8VSVojLusRq0AtCRH8hJ7ezV_elsbckjSgGTqEJG64YE3XKJ66-jo_bPfMXl4HKDfQyNLlybRVax245piRBt5kVvmaN57xqB33xLX5keEfJw5oxOq28ac3ZyydBIcXrZ3Y3csbAk4fvooCqUOszLA4q_MYKjt5u2gzexgKkwjfcIdnJcUYzlli3Zj0YYTdpPQyOb2oIEE7xvwlEdt1YjkykOwApEvuptVoHN9LkTPLKMWLNwxSLYT4lfHoQAK38TClBj5MxQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\" : \"ITADORI\",\n    \"lastName\": \"YUJI\",\n    \"username\": \"yuji@mailnesia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/users/5bafc0d0-7280-46eb-8c04-a28ebf7b8646/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "users",
+                "5bafc0d0-7280-46eb-8c04-a28ebf7b8646",
+                "roles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Groups",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNjcxOTAsImlhdCI6MTcyOTA2Njg5MCwianRpIjoiNjBhYjJkNjItZjg1OC00MTQ0LTk1ODEtZjJkOTk3YWFiZjcxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiIyMmQ2YzcwMS0xNjRiLTQzZjktYmNlNi00ZWIxNzBkNzBjYWYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.HsHNElGEIXa-Wcq4jBj0YAxZN6bBggYE_oyGw-VkJMPjyDSiy-24E_qYAMbIG1IbcklxfEfwc_mNxt8oRy55acb5aqyd0AT26fk8xLuN-IliRCfAz3oBPK0X4_Fw6NONX9crS01XdZPJB_Ndp2utsL3l51oFBcuCdYXLAOwG6cMebFYy_NsJW3gxC_HtyuSx4FrcSBw-PhKbaHcguq4eq5RDZa8RFGfJuRtggSLchWoZ26z9JQK4TqN4MZQ1bVM5S8XlfHg1A4k9UUTiwAs4cwVKem6P_aKYxhaDi5xk-QoxxSfkMWCuFlrr6k8jVR5ofmQc72ytzKGgzPY0dB1PmA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\" : \"ITADORI\",\n    \"lastName\": \"YUJI\",\n    \"username\": \"yuji@mailnesia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/users/5bafc0d0-7280-46eb-8c04-a28ebf7b8646/groups",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "users",
+                "5bafc0d0-7280-46eb-8c04-a28ebf7b8646",
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNjcxOTAsImlhdCI6MTcyOTA2Njg5MCwianRpIjoiNjBhYjJkNjItZjg1OC00MTQ0LTk1ODEtZjJkOTk3YWFiZjcxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiIyMmQ2YzcwMS0xNjRiLTQzZjktYmNlNi00ZWIxNzBkNzBjYWYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.HsHNElGEIXa-Wcq4jBj0YAxZN6bBggYE_oyGw-VkJMPjyDSiy-24E_qYAMbIG1IbcklxfEfwc_mNxt8oRy55acb5aqyd0AT26fk8xLuN-IliRCfAz3oBPK0X4_Fw6NONX9crS01XdZPJB_Ndp2utsL3l51oFBcuCdYXLAOwG6cMebFYy_NsJW3gxC_HtyuSx4FrcSBw-PhKbaHcguq4eq5RDZa8RFGfJuRtggSLchWoZ26z9JQK4TqN4MZQ1bVM5S8XlfHg1A4k9UUTiwAs4cwVKem6P_aKYxhaDi5xk-QoxxSfkMWCuFlrr6k8jVR5ofmQc72ytzKGgzPY0dB1PmA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\" : \"ITADORI\",\n    \"lastName\": \"YUJI\",\n    \"username\": \"yuji@mailnesia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/users/a9857abb-f01c-4179-9d45-bb1902a4647c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "users",
+                "a9857abb-f01c-4179-9d45-bb1902a4647c"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "ROLES",
+      "item": [
+        {
+          "name": "Assign User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNzAwNTcsImlhdCI6MTcyOTA2OTc1NywianRpIjoiY2IzMThlMDEtYWQ0NS00ZGJkLThmYjYtZWY5NGRkN2M4MDg1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiI0ZGU4MjhjNC0xZGFmLTRkNGMtOGY3YS1iNDc5NzcwMzBiMmIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.RZGN1YWzY9SWupA-oHdB3iWyvVdOAsvyhWj7zkCfSQT400yI7S3Sxkt_Klbx5urda3F2oThjSwUC4z8VSVojLusRq0AtCRH8hJ7ezV_elsbckjSgGTqEJG64YE3XKJ66-jo_bPfMXl4HKDfQyNLlybRVax245piRBt5kVvmaN57xqB33xLX5keEfJw5oxOq28ac3ZyydBIcXrZ3Y3csbAk4fvooCqUOszLA4q_MYKjt5u2gzexgKkwjfcIdnJcUYzlli3Zj0YYTdpPQyOb2oIEE7xvwlEdt1YjkykOwApEvuptVoHN9LkTPLKMWLNwxSLYT4lfHoQAK38TClBj5MxQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/roles/assign/users/5bafc0d0-7280-46eb-8c04-a28ebf7b8646?roleName=MEMBER",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "roles",
+                "assign",
+                "users",
+                "5bafc0d0-7280-46eb-8c04-a28ebf7b8646"
+              ],
+              "query": [
+                {
+                  "key": "roleName",
+                  "value": "MEMBER"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UnAssign User",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNzAwNTcsImlhdCI6MTcyOTA2OTc1NywianRpIjoiY2IzMThlMDEtYWQ0NS00ZGJkLThmYjYtZWY5NGRkN2M4MDg1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiI0ZGU4MjhjNC0xZGFmLTRkNGMtOGY3YS1iNDc5NzcwMzBiMmIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.RZGN1YWzY9SWupA-oHdB3iWyvVdOAsvyhWj7zkCfSQT400yI7S3Sxkt_Klbx5urda3F2oThjSwUC4z8VSVojLusRq0AtCRH8hJ7ezV_elsbckjSgGTqEJG64YE3XKJ66-jo_bPfMXl4HKDfQyNLlybRVax245piRBt5kVvmaN57xqB33xLX5keEfJw5oxOq28ac3ZyydBIcXrZ3Y3csbAk4fvooCqUOszLA4q_MYKjt5u2gzexgKkwjfcIdnJcUYzlli3Zj0YYTdpPQyOb2oIEE7xvwlEdt1YjkykOwApEvuptVoHN9LkTPLKMWLNwxSLYT4lfHoQAK38TClBj5MxQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/roles/remove/users/5bafc0d0-7280-46eb-8c04-a28ebf7b8646?roleName=MEMBER",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "roles",
+                "remove",
+                "users",
+                "5bafc0d0-7280-46eb-8c04-a28ebf7b8646"
+              ],
+              "query": [
+                {
+                  "key": "roleName",
+                  "value": "MEMBER"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "GROUPS",
+      "item": [
+        {
+          "name": "Assign Group",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNzA2MDgsImlhdCI6MTcyOTA3MDMwOCwianRpIjoiZjY3ZDgwOTAtYTAzNS00MzFkLWE4MjAtOGRkZjE0YjA5NTc1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiI4NzIyYjU4Mi0zZDBiLTRiNWYtOTE2NS02ZjVkOWE3NDhmOGIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.RfX8r49X3EO8JDRAObj5PVTRvREYXoL69oNaU0TPWJdwaDqiz_mkCTRV5_SoGBzf_qaKuIlamamRS3EicaStycELG9OL3Gf6ma_QHiuupi4xKMTYuqFu3kdOAfKLot8xorGuB7u4m2E2xFLTPuu3nb_m2DJUuugTeq_t6McDBWUoGeuPiHBwNA0-QhVMucRU_21nLnWBCGFekrojFx5Sy30PrPVFNYrnqWS6VbfvLuBdn55y_C44pp85unRbHZtSWSW5nAFmkOqkQ4wFitVAUQn-YmJh7DB9uJkY5e_B5L_IyG8Qlx1yjPvCPI-i3eRunoUPDKVxLF0QQ29ATuJBhQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/groups/65760bf1-7692-46b3-8da9-fe4511a3e7b6/assign/users/5bafc0d0-7280-46eb-8c04-a28ebf7b8646",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "groups",
+                "65760bf1-7692-46b3-8da9-fe4511a3e7b6",
+                "assign",
+                "users",
+                "5bafc0d0-7280-46eb-8c04-a28ebf7b8646"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UnAssign Group",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNzA2MDgsImlhdCI6MTcyOTA3MDMwOCwianRpIjoiZjY3ZDgwOTAtYTAzNS00MzFkLWE4MjAtOGRkZjE0YjA5NTc1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiI4NzIyYjU4Mi0zZDBiLTRiNWYtOTE2NS02ZjVkOWE3NDhmOGIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiZGVmYXVsdC1yb2xlcy1wb3dlcnJhbmdlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.RfX8r49X3EO8JDRAObj5PVTRvREYXoL69oNaU0TPWJdwaDqiz_mkCTRV5_SoGBzf_qaKuIlamamRS3EicaStycELG9OL3Gf6ma_QHiuupi4xKMTYuqFu3kdOAfKLot8xorGuB7u4m2E2xFLTPuu3nb_m2DJUuugTeq_t6McDBWUoGeuPiHBwNA0-QhVMucRU_21nLnWBCGFekrojFx5Sy30PrPVFNYrnqWS6VbfvLuBdn55y_C44pp85unRbHZtSWSW5nAFmkOqkQ4wFitVAUQn-YmJh7DB9uJkY5e_B5L_IyG8Qlx1yjPvCPI-i3eRunoUPDKVxLF0QQ29ATuJBhQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/groups/65760bf1-7692-46b3-8da9-fe4511a3e7b6/remove/users/5bafc0d0-7280-46eb-8c04-a28ebf7b8646",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "groups",
+                "65760bf1-7692-46b3-8da9-fe4511a3e7b6",
+                "remove",
+                "users",
+                "5bafc0d0-7280-46eb-8c04-a28ebf7b8646"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Merge Role",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJUT2I4VTNnenZVVU9GRjJOOE9JZlpLc3lYODIxS3dLRGJkaGMyREc5WGpvIn0.eyJleHAiOjE3MjkwNzEyMTcsImlhdCI6MTcyOTA3MDkxNywianRpIjoiM2E5NWIzN2QtOTk5Ni00NDczLTgyMjUtZDFlMmM5NmVhN2ViIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9Qb3dlclJhbmdlciIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIzOGJjYTY1ZS00MGQ2LTRjM2ItYmI0MC0xN2ZmMzgyYTlkMGIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJncmVlbl9yYW5nZXIiLCJzaWQiOiJmNjZhYzc2Mi1lNDg1LTQ4ZmEtYmRiNS1jNjlkYzU5OGRhZjUiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJNRVJHRSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXBvd2VycmFuZ2VyIiwiREVWRUxPUCJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiVXNlciAxIEFkbWluIFVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ1c2VyMSIsImdpdmVuX25hbWUiOiJVc2VyIDEiLCJmYW1pbHlfbmFtZSI6IkFkbWluIFVzZXIiLCJlbWFpbCI6InVzZXIxQHlvcG1haWwuY29tIn0.VnyR3ss5GkQEkTtp58wcfHl_C6ZXEo7pWd3s4W3guO-dC_q6600RNnV4TqIk4bAhEKIiTi11XcgMCFDhzGQd2CU8wPgs30tgGTVdQD_emdL9HFFmsswdMnilb5LFbHYw1k8vE44kGVPUt7EZ7TDjYmsbAA2btKmfXLfLriCreH9uBMW5TYl__Y8AjRnFTXWm60ZxlTChzN0rSKaj05GZF0Wobg76SffG1m6evw-kKQrleusJpkgusXvh1_wiq-O_4jYxrkwYs09M6qOAJfgP7gjTQsWej0k2a6QbsFRjWW84-X6J6cXPbg9ILp0UqofeSDzUNCyGxzXzIZxEWoZD_g",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/rbac/merge-role",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "rbac",
+                "merge-role"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Get Token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "client_id",
+              "value": "green_ranger",
+              "type": "text"
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "user1",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:7080/realms/PowerRanger/protocol/openid-connect/token",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7080",
+          "path": [
+            "realms",
+            "PowerRanger",
+            "protocol",
+            "openid-connect",
+            "token"
+          ],
+          "query": [
+            {
+              "key": "client_id",
+              "value": "green_ranger",
+              "disabled": true
+            },
+            {
+              "key": "grant_type",
+              "value": "password",
+              "disabled": true
+            },
+            {
+              "key": "username",
+              "value": "user1",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
