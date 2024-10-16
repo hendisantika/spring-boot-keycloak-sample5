@@ -36,4 +36,11 @@ public class RoleService {
         RoleRepresentation representation = rolesResource.get(roleName).toRepresentation();
         user.roles().realmLevel().add(Collections.singletonList(representation));
     }
+
+    public void deleteRoleFromUser(String userId, String roleName) {
+        UserResource user = userService.getUser(userId);
+        RolesResource rolesResource = getRolesResource();
+        RoleRepresentation representation = rolesResource.get(roleName).toRepresentation();
+        user.roles().realmLevel().remove(Collections.singletonList(representation));
+    }
 }
