@@ -70,4 +70,10 @@ public class UserService {
         usersResource.get(userId).sendVerifyEmail();
         log.info("Verification email has been sent {}", userId);
     }
+
+    public void deleteUser(String userId) {
+        UsersResource usersResource = getUsersResource();
+        usersResource.delete(userId);
+        log.info("User has been deleted");
+    }
 }
