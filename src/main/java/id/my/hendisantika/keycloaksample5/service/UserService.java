@@ -32,8 +32,13 @@ import java.util.Objects;
 @Slf4j
 public class UserService {
     private final Keycloak keycloak;
+
     @Value("${app.keycloak.realm}")
     private String realm;
+
+    private UsersResource getUsersResource() {
+        return keycloak.realm(realm).users();
+    }
 
     public void createUser(NewUserRecord newUserRecord) {
         UserRepresentation userRepresentation = new UserRepresentation();
